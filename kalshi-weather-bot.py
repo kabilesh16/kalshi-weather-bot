@@ -11,3 +11,4 @@ precip_mm = data['properties']['precipitationLastHour']['value']
 
 print(f"Temperature: {temp_c} °C")
 print(f"Precipitation last hour: {precip_mm} mm")
+print("hello")
