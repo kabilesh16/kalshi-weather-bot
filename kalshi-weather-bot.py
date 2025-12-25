@@ -1,8 +1,11 @@
 import requests
 
-station_id = "KNYC"  #Central Park, NYC
+station_id = "KNYC"  # Central Park, NYC
 url = f"https://api.weather.gov/stations/{station_id}/observations/latest"
+url2 = "https://api.open-meteo.com/v1/forecast?latitude=40.78&longitude=-73.96&hourly=temperature_2m,precipitation"
 
+response2 = requests.get(url2)
+data2 = response2.json()
 response = requests.get(url)
 data = response.json()
 
@@ -32,7 +35,7 @@ def get_current_weather(lat, lon):
         "temperature_c": weather["temperature"]
     }
 
-#Los Angeles
+# Los Angeles
 lat = 34.05
 lon = -118.24
 
