@@ -30,6 +30,10 @@ def load_nyc_daily_highs(
         "temperature": data["hourly"]["temperature_2m"]
     })
 
+    # Convert from Celsius to Fahrenheit
+    # Open-Meteo API returns temperatures in Celsius by default
+    df["temperature"] = (df["temperature"] * 9/5) + 32
+
     df["date"] = df["time"].dt.date
 
     daily_highs = (
